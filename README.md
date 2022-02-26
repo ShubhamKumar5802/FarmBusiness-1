@@ -1,2 +1,15 @@
-# FarmBusiness
-The repository is for Hackmol 3.0 dated from 26-27
+## FarmBusiness
+The repository is for <strong>Hackmol**3.0</strong> dated from 26-27
+ ### Team member
+  <ul>
+  <li>Shubham Kumar <strong>Team leader</strong></li>
+     
+  <li>Ankit Jha</li>
+       
+  <li>Anshul Sharma</li>
+  
+  <li>Harsh Dhiman</li>
+  
+   <li>Paras Gupta</li>
+  
+  </ul>
