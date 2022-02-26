@@ -1,90 +1,103 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
-body{
-    background: black;
-
+body {
+  background: black;
 }
 
 /* for logo */
 
-.logo img{
-    height: 55px;
-    filter: invert(1);
-}
-
 /* for menu  */
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-around; 
-    /* position: sticky; */
-    /* top: 0; */
-    cursor: pointer;
-    height: 10vh;
-    background: purple;
-    border: 2px solid green;
-}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 10vh;
+  background: purple;
+  border: 2px solid green;
+  flex-wrap: wrap;
 
+  .logo {
+    height: 90%;
+  }
+  .logo img {
+    height: inherit;
+    filter: invert(1);
+  }
 
-
-.nav-list{
-    /* width: 50%; */
+  
+  .nav-list {
     display: flex;
     justify-content: space-around;
-    /* align-items: left; */
-    li{
-        list-style: none;
-        margin: 22px;
-        /* padding: 26px 30px; */
-        a{
-            text-decoration: none;
-            font-weight: bold;
-            color: white;
-            font-size: 20px;
-            font-family: 'ubuntu', sans-serif;
+
+    li {
+      list-style: none;
+      margin: 22px;
+      a {
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+        font-size: 20px;
+        font-family: "ubuntu", sans-serif;
+
+        &:hover {
+          color: #29dd29;
         }
+      }
     }
-    &:hover{
-        color: #29dd29;
-    }
-}
+  }
 
-
-
-
-
-
-/* for rigth button  */
-
-.rightNav{
-    /* width: 30%; */
-    /* text-align: right; */
-    /* padding: o 23px; */
-}
-
-.btn{
+  .btn {
     outline: none;
     border-radius: 5px;
+    margin-right:10px;
     font-size: large;
     font-weight: bolder;
-    padding: 5px;
+    padding: 2px;
     transition: all 0.4s;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    &:hover{
-        cursor: pointer;
-        background-color: rgb(173, 24, 173);
-        color: white;
-        text-decoration: underline;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(173, 24, 173);
+      color: white;
+      text-decoration: underline;
     }
-    
+  }
 }
 
-
-.footer{
-    background-color: white;
+.aboutUs{
+    
+    background-image:url(https://source.unsplash.com/1600x800/?gym,fitness);
+    background-repeat: no-repeat;
+    background-position: center;
+    // background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 40px;
+    .aboutContainer{
+        color: white;
+        text-shadow: 2px 3px 3px black; 
+        h1{
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+        }
+        p{
+            width: 50%;
+            margin: auto;
+        }
+    }
+
+
+}
+
+.footer {
+  background-color: white;
+  text-align: center;
+  font-size: 2rem;
 }
