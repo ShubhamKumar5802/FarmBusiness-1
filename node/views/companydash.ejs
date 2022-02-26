@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--TITLE-->
+<title>Company Dash</title>
+
+<!--ICON-->
+<link rel="shortcut icon" href="/DevanagariBrahmi/logo.png">
+
+<!--META TAGS-->
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="author" content="Team Bboysdreamsfell">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content="" />
+<meta property="og:site_name" content="Profiler Name || Krishivalahs" />
+
+<!--EXTERNAL CSS-->
+<link rel="stylesheet" href="css/style.css">
+<script src="javascript/index.js" defer></script>
+
+
+
+<!--PLUGIN-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--GOOGLE FONTS-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Oswald:wght@300;400&family=Ubuntu:wght@700&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet"> 
+<body style="background: -webkit-linear-gradient(right, #81d611, #217408, #4fd610, #57fa42);">
+    <%- include('header'); -%>
+
+
+<div class="container">
+
+<table>
+
+<tr>
+
+<td>
+<section>
+<!-- <label for="fileToUpload">
+<i class="fa fa-camera"></i>
+<input type="file" id="fileToUpload" style="visibility:hidden;" accept=".png,.jpg,jpeg,.PNG,.JPEG" name="fileToUpload" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+</label> -->
+<img src="https://i.ibb.co/yNGW4gg/avatar.png" id="blah" alt="Avatar">
+</section>
+<h1>shubham kumar</h1>
+<h3>Business Man</h3>
+</td>
+
+<td>
+<ul class="profile">
+<li><b>Full name</b> <input type="text" name="fname" id="fname" maxlength="100" value="shubham" required /> </li>
+
+<li><b>Email</b> <input type="email" name="email" id="email" maxlength="150" value="shubhamk.cs.20@nitj.ac.in" required /></li>
+
+<li><b>Contact number</b> <input type="tel" name="mobile" id="mobile" maxlength="10" value="0123456789" required /> </li>
+<li><b>GST number</b> <input type="text" name="GST" id="gst" maxlength="14" value="xks5256skn" required /></li>
+</ul>
+</td>
+
+</tr>
+
+
+</table>
+
+<div id="filter">
+    <form action="" class="FilterForm">
+        <h1>Choose the crop and amount you need</h1>
+        <div class="selection">
+
+            <div class="crops">
+                <p>Select a Crop:</p>
+                <div class="crops-collection">
+                    <div>
+                        <input type="radio" id="Rice" name="drone" value="Rice"
+                               checked>
+                        <label for="Rice">Rice</label>
+                    </div>
+                      
+                    <div>
+                        <input type="radio" id="Wheat" name="drone" value="Wheat">
+                        <label for="Wheat">Wheat</label>
+                    </div>
+        
+                    <div>
+                        <input type="radio" id="Barley" name="drone" value="Barley">
+                        <label for="Barley">Barley</label>
+                    </div>
+                    
+                    <div>
+                        <input type="radio" id="Maize" name="drone" value="Maize">
+                        <label for="Maize">Maize</label>
+                    </div>
+                </div>
+                <div class="crops-collection">
+    
+                    <div>
+                        <input type="radio" id="Corn" name="drone" value="Corn">
+                        <label for="Corn">Corn</label>
+                    </div>
+        
+                    <div>
+                        <input type="radio" id="XYZ" name="drone" value="XYZ">
+                        <label for="XYZ">XYZ</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="ABC" name="drone" value="ABC">
+                        <label for="ABC">ABC</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="Shubham" name="drone" value="Shubham">
+                        <label for="ABC">Shubham</label>
+                    </div>
+                </div>
+                    
+               
+    
+            </div>
+    
+           
+    
+            <div class="amount-in-number">
+                <label for="field-in-number">Enter the amount in acre</label>
+                <input id="number" type="number" min="5000" value="5000">
+            </div>
+
+        </div>
+        
+        <div class="submit-button">
+            <button class="btn" type="submit"> SEARCH </button>
+        </div>
+    </form>
+
+</div>
+<div id="cards">
+    <div class="card">
+      <div class="card-image">
+        <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="user image">
+      </div>
+      <div class="card-title">
+        <p>Name:<span>Anshul</span></p>
+      </div>
+      <div class="card-subtitle">
+        <p>Land:<span>50</span> Acre</p>
+        <p>Contact:<span>9910109562</span></p>
+      </div>
+      <div class="social-links">
+        <a href="#">
+          <i data-feather="twitter" id="icon"></i>
+        </a>
+        <a href="#">
+          <i data-feather="instagram" id="icon"></i>
+        </a>
+        <a href="#">
+          <i data-feather="github" id="icon"></i>
+        </a>
+      </div>
+      <div class="learn-btn">
+        <button type="submit" class="cardrequest">Contact</button>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-image">
+        <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="user image">
+      </div>
+      <div class="card-title">
+        <p>Name:<span>Anshul</span></p>
+      </div>
+      <div class="card-subtitle">
+        <p>Land:<span>50</span> Acre</p>
+        <p>Contact:<span>9910109562</span></p>
+      </div>
+      <div class="social-links">
+        <a href="#">
+          <i data-feather="twitter" id="icon"></i>
+        </a>
+        <a href="#">
+          <i data-feather="instagram" id="icon"></i>
+        </a>
+        <a href="#">
+          <i data-feather="github" id="icon"></i>
+        </a>
+      </div>
+      <div class="learn-btn">
+        <button type="submit" class="cardrequest">Contact</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">
+        <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="user image">
+      </div>
+      <div class="card-title">
+        <p>Name:<span>Anshul</span></p>
+      </div>
+      <div class="card-subtitle">
+        <p>Land:<span>50</span> Acre</p>
+        <p>Contact:<span>9910109562</span></p>
+      </div>
+      <div class="social-links">
+        <a href="#">
+          <i data-feather="twitter" id="icon"></i>
+        </a>
+        <a href="#">
+          <i data-feather="instagram" id="icon"></i>
+        </a>
+        <a href="#">
+          <i data-feather="github" id="icon"></i>
+        </a>
+      </div>
+      <div class="learn-btn">
+        <button type="submit" class="cardrequest">Contact</button>
+      </div>
+    </div>
+
+</div>
+
+</div>
+
+<%- include('footer'); -%>
+
+</body>
+
+</html>
