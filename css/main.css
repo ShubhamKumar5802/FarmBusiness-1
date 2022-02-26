@@ -1,0 +1,86 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background: black;
+
+}
+
+/* for logo */
+
+.logo img{
+    height: 55px;
+    filter: invert(1);
+}
+
+/* for menu  */
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    /* position: sticky; */
+    /* top: 0; */
+    cursor: pointer;
+    height: 10vh;
+    background: purple;
+}
+
+
+
+.nav-list{
+    /* width: 50%; */
+    display: flex;
+    justify-content: space-around;
+    /* align-items: left; */
+
+}
+
+.nav-list li{
+    list-style: none;
+    margin: 22px;
+    /* padding: 26px 30px; */
+}
+
+.nav-list li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    font-family: 'ubuntu', sans-serif;
+}
+.nav-list li a:hover{
+    color: #29dd29;
+}
+
+/* for rigth button  */
+
+.rightNav{
+    /* width: 30%; */
+    /* text-align: right; */
+    /* padding: o 23px; */
+}
+
+.btn{
+    outline: none;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bolder;
+    padding: 5px;
+    transition: all 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(173, 24, 173);
+    color: white;
+    text-decoration: underline;
+}
+
+.footer{
+    background-color: white;
+    text-align: center;
+    font-size: 30px;
+}
