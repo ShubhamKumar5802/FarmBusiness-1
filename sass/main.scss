@@ -25,6 +25,7 @@ body{
     cursor: pointer;
     height: 10vh;
     background: purple;
+    border: 2px solid green;
 }
 
 
@@ -34,25 +35,27 @@ body{
     display: flex;
     justify-content: space-around;
     /* align-items: left; */
-
+    li{
+        list-style: none;
+        margin: 22px;
+        /* padding: 26px 30px; */
+        a{
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            font-size: 20px;
+            font-family: 'ubuntu', sans-serif;
+        }
+    }
+    &:hover{
+        color: #29dd29;
+    }
 }
 
-.nav-list li{
-    list-style: none;
-    margin: 22px;
-    /* padding: 26px 30px; */
-}
 
-.nav-list li a{
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
-    font-size: 20px;
-    font-family: 'ubuntu', sans-serif;
-}
-.nav-list li a:hover{
-    color: #29dd29;
-}
+
+
+
 
 /* for rigth button  */
 
@@ -70,14 +73,15 @@ body{
     padding: 5px;
     transition: all 0.4s;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(173, 24, 173);
+        color: white;
+        text-decoration: underline;
+    }
     
 }
-.btn:hover{
-    cursor: pointer;
-    background-color: rgb(173, 24, 173);
-    color: white;
-    text-decoration: underline;
-}
+
 
 .footer{
     background-color: white;
