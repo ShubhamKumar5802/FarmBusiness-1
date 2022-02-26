@@ -1,5 +1,5 @@
 ## FarmBusiness
-The repository is for <strong>Hackmol**3.0</strong> dated from 26-27 Feb
+The repository is for <strong>Hackmol 3.0</strong> dated from 26-27
  ### Team member
   <ul>
   <li>Shubham Kumar <strong>Team leader</strong></li>
