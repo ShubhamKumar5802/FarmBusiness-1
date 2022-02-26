@@ -5,10 +5,32 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+#success {
+  p {
+    background: -webkit-linear-gradient(left, #45b24b, #42fa42);
+    color: black;
+    font-weight: bold;
+    padding: 20px;
+  }
+}
+#failure {
+  p {
+    font-weight: bold;
+    background: rgb(230, 117, 24);
+    background: radial-gradient(
+      circle,
+      rgba(230, 117, 24, 1) 0%,
+      rgba(220, 45, 15, 1) 49%,
+      rgba(255, 0, 57, 1) 100%
+    );
+    color: black;
+    padding: 20px;
+  }
+}
 .formgroup {
   display: flex;
   // height: 100%;
-//   width: 60vw;
+  //   width: 60vw;
   justify-content: center;
   align-items: center;
   // background: -webkit-linear-gradient(left, #a16521, #795915);
@@ -24,7 +46,7 @@
 }
 .wrapper {
   overflow: hidden;
-  width: 75vw;
+  width: 60vw;
   // max-width: 390px;
   background: rgb(247, 245, 243);
   margin: auto;
@@ -38,7 +60,7 @@
   }
   .title {
     width: 50%;
-    font-size: 35px;
+    font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
     transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -78,7 +100,6 @@
       background: -webkit-linear-gradient(left, #45b24b, #42fa42);
       transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
-    
   }
   .form-container {
     width: 100%;
@@ -86,7 +107,7 @@
     .form-inner {
       display: flex;
       width: 200%;
-      p{
+      p {
         margin: 10px 0px;
         text-align: center;
       }
@@ -97,7 +118,6 @@
     }
   }
 }
-
 
 #signup:checked ~ .slider-tab {
   left: 50%;
@@ -121,7 +141,7 @@
 .form-inner form .field {
   height: 50px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 55px;
 
   input,
   textarea {
@@ -192,7 +212,7 @@ form .btn .btn-layer {
 form .btn:hover .btn-layer {
   left: 0;
 }
-form .btn input[type="submit"] {
+form .btn input[type="submit"],button[type="submit"] {
   height: 100%;
   width: 100%;
   z-index: 1;
@@ -207,6 +227,53 @@ form .btn input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="radio"]{
+input[type="radio"] {
   display: none;
+}
+
+.noofcrops {
+  margin-top: 55px;
+  p {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .four {
+    margin-top: 4px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px 10px;
+    input[type="checkbox"] {
+      cursor: pointer;
+    }
+  }
+
+  label {
+    font-size: 1rem;
+  }
+}
+.Ack {
+  text-decoration: underline;
+  padding-left: 7px;
+  margin-top: 5px;
+}
+
+.hide {
+  visibility: hidden;
+}
+.show {
+  visibility: visible;
+}
+#danger {
+  background: rgb(230, 117, 24);
+  background: radial-gradient(
+    circle,
+    rgba(230, 117, 24, 1) 0%,
+    rgba(220, 45, 15, 1) 49%,
+    rgba(255, 0, 57, 1) 100%
+  );
+  color: black;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 0.75rem;
 }
