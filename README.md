@@ -14,7 +14,7 @@ The repository is for <strong>Hackmol 3.0</strong> dated from 26-27
   
   </ul>
   
-<!--   ###Deployed Link is avalaible on  [To be released soon](https://google.com). -->
+  ###The idea behind the project is on  [ppt](https://docs.google.com/presentation/d/1P77r3UcnPb-IerrsOJiK4A_6ZLH1UVL2/edit?usp=sharing&ouid=106774572943632079902&rtpof=true&sd=true).
 
   
 <!--   ###Illustration of of our project -->
