@@ -164,13 +164,13 @@ app.post("/registerfarmer", async (req, res) => {
 });
 
 app.get("/farmerdash", function (req, res) {
-  res.render("farmerdash");
+  res.render("farmerDashboard");
 });
 app.get("/tandc", function (req, res) {
   res.render("TANDC");
 });
 app.get("/companydash", function (req, res) {
-  res.render("companydashboard");
+  res.render("companyDashboard");
 });
 
 app.listen(4000 || process.env.PORT, function () {
