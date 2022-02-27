@@ -56,17 +56,22 @@ app.post("/logincompany", async (req, res) => {
       companyDetails,
       config
     );
-    currComp = data.user;
-    res.render("companyDashboard", {
-      firstName: data.user.firstName,
-      lastName: data.user.lastName,
-      companyName: data.user.companyName,
-      email: data.user.email,
-      gst: data.user.gst,
-      orders: data.user.orders,
-      hasQuery: false,
-      message: "",
-    });
+    if(data){
+
+      currComp = data.user;
+      res.render("companyDashboard", {
+        firstName: data.user.firstName,
+        lastName: data.user.lastName,
+        companyName: data.user.companyName,
+        email: data.user.email,
+        gst: data.user.gst,
+        orders: data.user.orders,
+        hasQuery: false,
+        message: "",
+      });
+    }else{
+      console.log("Something went wrong")
+    }
   } catch (error) {
     console.log(error.response.data.errMessage);
   }
@@ -88,16 +93,21 @@ app.post("/loginfarmer", async (req, res) => {
       farmerdetails,
       config
     );
-    res.render("farmerDashboard", {
-      firstName: data.user.firstName,
-      lastName: data.user.lastName,
-      email: data.user.email,
-      contactNo: data.user.contactNo,
-      aadhar: data.user.aadhar,
-      land: data.user.land,
-      crops: data.user.crops,
-      orders: data.user.orders,
-    });
+    if(data){
+
+      res.render("farmerDashboard", {
+        firstName: data.user.firstName,
+        lastName: data.user.lastName,
+        email: data.user.email,
+        contactNo: data.user.contactNo,
+        aadhar: data.user.aadhar,
+        land: data.user.land,
+        crops: data.user.crops,
+        orders: data.user.orders,
+      });
+    }else{
+      console.log("something went wrong");
+    }
   } catch (error) {
     console.log(error.response.data.errMessage);
   }
@@ -140,32 +150,32 @@ app.post("/registercompany", async (req, res) => {
       message: ""
     });
   } catch (error) {
-    console.log(error);
+    console.log(error.response.data.errMessage);
   }
 });
 
 app.post("/registerfarmer", async (req, res) => {
-  let crop = [];
+  let crops = [];
   if (req.body.crop1 === "Rice") {
-    crop.push("Rice");
+    crops.push("Rice");
   }
   if (req.body.crop2 === "Wheat") {
-    crop.push("Wheat");
+    crops.push("Wheat");
   }
   if (req.body.crop3 === "Barley") {
-    crop.push("Barley");
+    crops.push("Barley");
   }
   if (req.body.crop4 === "Oats") {
-    crop.push("Oats");
+    crops.push("Oats");
   }
   if (req.body.crop5 === "Pulse") {
-    crop.push("Pulse");
+    crops.push("Pulse");
   }
   if (req.body.crop6 === "Maize") {
-    crop.push("Maize");
+    crops.push("Maize");
   }
   if (req.body.crop7 === "Sugarcan") {
-    crop.push("Sugarcan");
+    crops.push("Sugarcan");
   }
 
   const config = {
@@ -182,8 +192,8 @@ app.post("/registerfarmer", async (req, res) => {
     aadhar: req.body.aadhar,
     land: req.body.land,
     password: req.body.password,
-    crops: crop,
-    crops: [],
+    crops,
+
     orders: [],
   };
   try {
@@ -192,18 +202,23 @@ app.post("/registerfarmer", async (req, res) => {
       farmerdetails,
       config
     );
-    res.render("farmerDashboard", {
-      firstName: data.user.firstName,
-      lastName: data.user.lastName,
-      email: data.user.email,
-      contactNo: data.user.contactNo,
-      aadhar: data.user.aadhar,
-      land: data.user.land,
-      crops: data.user.crops,
-      orders: data.user.orders,
-    });
+    if(data){
+
+      res.render("farmerDashboard", {
+        firstName: data.user.firstName,
+        lastName: data.user.lastName,
+        email: data.user.email,
+        contactNo: data.user.contactNo,
+        aadhar: data.user.aadhar,
+        land: data.user.land,
+        crops: data.user.crops,
+        orders: data.user.orders,
+      });
+    }else{
+      console.log("Something went wrong");
+    }
   } catch (error) {
-    console.log("error");
+    console.log(error.response.data.errMessage);
   }
 });
 
@@ -226,18 +241,22 @@ app.post("/getfarmers", async (req, res) => {
       query_url = `http://127.0.0.1:3000/api/v1/farmer?land[gte]=${land}`;
     }
     const { data } = await axios.get(query_url);
+    if(data){
 
-    res.render("companyDashboard", {
-      firstName: currComp.firstName,
-      lastName: currComp.lastName,
-      companyName: currComp.companyName,
-      email: currComp.email,
-      gst: currComp.gst,
-      orders: currComp.orders,
-      hasQuery: true,
+      res.render("companyDashboard", {
+        firstName: currComp.firstName,
+        lastName: currComp.lastName,
+        companyName: currComp.companyName,
+        email: currComp.email,
+        gst: currComp.gst,
+        orders: currComp.orders,
+        hasQuery: true,
       farmers: data.farmers,
       message: "",
     });
+  }else{
+    console.log("Something Went wrong");
+  }
   } catch (error) {
     console.log(error);
   }
