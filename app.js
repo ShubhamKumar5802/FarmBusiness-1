@@ -3,14 +3,29 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const { default: axios } = require("axios");
 
-// const mongoose = require("mongoose");
-// const _ = require("lodash");
 
 const app = express();
+
+const cookieParser = require("cookie-parser");
+const errorMiddleware = require('.//backend/middlewares/error');
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views/")); // suggested
 app.use(express.static("public"));
+
+//setting up config file
+if(process.env.NODE_ENV !== "PRODUCTION")require("dotenv").config({ path: "./backend/config/config.env" });
+
+app.use(express.json());
+app.use(cookieParser());
+
+// importing all routes
+const farmers = require("./backend/routes/farmer");
+const companies = require("./backend/routes/company"); 
+
+app.use('/api/v1', farmers);
+app.use('/api/v1', companies);
 
 let currComp, currFarmer;
 app.get("/", function (req, res) {
@@ -263,8 +278,9 @@ app.post('/sendorder', async (req, res) => {
    console.log(error.response.data.errMessage);
  }
 
-})
-
-app.listen(4000 || process.env.PORT, function () {
-  console.log("Server started on port 4000");
 });
+
+// middleware to handle errors
+app.use(errorMiddleware);
+
+module.exports = app;
