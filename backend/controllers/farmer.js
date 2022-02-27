@@ -18,6 +18,7 @@ exports.registerFarmer = catchAsyncError(async (req, res, next) => {
     crops,
     orders,
   } = req.body;
+  console.log(req.body)
   const user = await Farmer.create({
     firstName,
     lastName,

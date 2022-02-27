@@ -145,7 +145,6 @@ Aadhar.addEventListener('blur', () => {
 Acre.addEventListener('blur', () => {
 
     let str = Acre.value;
-    console.log("acre")
     if (str > 0) {
         validAcre = true;
         console.log('Your name is valid');
@@ -155,7 +154,6 @@ Acre.addEventListener('blur', () => {
     }
     else {
         validAcre = false;
-        console.log('Your name is not valid');
         Acre.nextElementSibling.classList.remove('hide')
         Acre.nextElementSibling.classList.add('show');
     }
@@ -167,14 +165,12 @@ Password.addEventListener('blur', () => {
     let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/;
     if (regex.test(str)) {
         validPassword = true;
-        console.log('Your name is valid');
         Password.nextElementSibling.classList.add('hide');
         Password.nextElementSibling.classList.remove('show');
         // validUser = true;
     }
     else {
         validPassword = false;
-        console.log('Your name is not valid');
         Password.nextElementSibling.classList.remove('hide')
         Password.nextElementSibling.classList.add('show');
     }
@@ -187,14 +183,11 @@ confirmPassword.addEventListener('blur', () => {
     let str2 = confirmPassword.value;
 
     if (str1 === str2) {
-        console.log(str1, str2, confirmPassword.nextElementSibling)
         confirmPassword.nextElementSibling.classList.add('hide');
         confirmPassword.nextElementSibling.classList.remove('show');
-        // confirmPassword.style.backgroundColor="red"
-        // validUser = true;
+     
     }
     else {
-        console.log('Your name is not valid');
         confirmPassword.nextElementSibling.classList.remove('hide')
         confirmPassword.nextElementSibling.classList.add('show');
     }
@@ -229,7 +222,6 @@ const CompanyEmailId=document.getElementById("Company_EmailId")
 const CompanyPassword=document.getElementById("CompanyPassword");
 const CompanyConfirmPassword=document.getElementById("Company_Confirm_Password");
 const GST=document.getElementById("GST");
-const CompanySignUp = document.getElementById("CompanySignUp");
 
 let validMFirstName=false;
 let validMLastName=false;
@@ -241,7 +233,7 @@ let validCompanyPassword=false;
 
 ManagerFirstName.addEventListener('blur', function () {
     let regex = /^[a-z ,.'-]+$/i
-    console.log("hi");
+
     let str = this.value;
     if (regex.test(str)) {
         validMFirstName=true;
@@ -257,7 +249,7 @@ ManagerFirstName.addEventListener('blur', function () {
 
 ManagerLastName.addEventListener('blur', function () {
     let regex = /^[a-z ,.'-]+$/i
-    console.log("hi");
+  
     let str = this.value;
     if (regex.test(str)) {
         validMLastName=true;
@@ -371,19 +363,3 @@ CompanyConfirmPassword.addEventListener('blur',function () {
 
 })
 
-CompanySignUp.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    console.log(validMFirstName,validMLastName,validCompanyName,validCompanyContactNumber,validCompanyEmail,validCompanyGST,validCompanyGST)
-    if (validMFirstName && validMLastName && validCompanyName && validCompanyContactNumber && validCompanyEmail && validCompanyGST && validCompanyGST) {
-        success.style.display = "block";
-        failure.style.display = "none";
-        let farmerform = document.getElementsByClassName(".login1");
-
-    }
-    else {
-        success.style.display = "none";
-        failure.style.display = "block";
-    }
-    window.scrollTo(0, 0);
-})
