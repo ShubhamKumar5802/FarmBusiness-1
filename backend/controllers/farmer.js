@@ -1,5 +1,6 @@
 const Farmer = require("../models/farmer");
 const ErrorHandler = require("../utils/errorHandler");
+const ApiFeatures = require("../utils/apiFeatures");
 const catchAsyncError = require("../middlewares/catchAsyncErrors");
 const sendToken = require("../utils/jwtToken");
 
@@ -15,6 +16,7 @@ exports.registerFarmer = catchAsyncError(async (req, res, next) => {
     land,
     password,
     crops,
+    orders,
   } = req.body;
   const user = await Farmer.create({
     firstName,
@@ -26,6 +28,7 @@ exports.registerFarmer = catchAsyncError(async (req, res, next) => {
     land,
     password,
     crops,
+    orders,
   });
   sendToken(user, 201, res);
 });
@@ -61,3 +64,34 @@ exports.loginFarmer = catchAsyncError(async (req, res, next) => {
   sendToken(user, 200, res);
 });
 
+
+// Get all farmers   =>    /api/v1/farmer?keywords=Wheat
+exports.getfarmers = catchAsyncError(async (req, res, next) => {
+  const resPerPage = 8;
+  const apiFeatures = new ApiFeatures(Farmer.find(), req.query)
+    .search() //all the products in Product collection is now stored in apifeaturs
+    .filter() //all the product matching with keyword is store in this
+    .pagination(resPerPage); //maximum resPerPage is shown in 1 page
+  const farmers = await apiFeatures.query;
+
+  res.status(200).json({
+    sucess: true,
+    farmers,
+  });
+});
+
+// Get order         =>   /api/v1/farmer/order/:id
+exports.getOrder = catchAsyncError(async (req, res, next) => {
+  
+  const farmer = await Farmer.findById(req.params.id);
+  if (!farmer) {
+    return next(new ErrorHandler("Farmer not found", 404));
+  }
+  const newOreder = req.body;
+ 
+  farmer.orders.push(newOreder)
+  farmer.save();
+  res.status(200).json({
+    success: true,
+  });
+}) 

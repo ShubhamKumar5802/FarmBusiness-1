@@ -55,16 +55,26 @@ const farmerSchema = new mongoose.Schema({
   crops: [
     {
       type: String,
-      // enum: {
-      //   values: [
-      //    "Wheat",
-      //    "Rice",
-      //    "Oats",
-      //    "Barley",
-      //    "Pulse"
-      //   ],
-      //   message: "Error in crop type",
-      // },
+    },
+  ],
+  orders: [
+    {
+      by: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Company",
+      },
+      company: {
+        type: String,
+      },
+      reqArea: {
+        type: Number,
+      },
+      crops: {
+        type: String,
+      },
+      amount: {
+        type: Number,
+      },
     },
   ],
 });
