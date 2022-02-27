@@ -44,6 +44,23 @@ const CompanySchema = new mongoose.Schema({
     min: 8,
     max: 16,
   },
+  orders: [
+    {
+      to: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Farmer",
+      },
+      reqArea: {
+        type: Number,
+      },
+      crops: {
+        type: String,
+      },
+      amount: {
+        type: Number,
+      },
+    },
+  ],
 });
 
 // Encrypting password before saving
