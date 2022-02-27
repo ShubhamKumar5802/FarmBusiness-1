@@ -4,8 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "export NODE_ENV=DEVELOPMENT&&nodemon backend/server",
-    "prod": "export NODE_ENV=PRODUCTION&&nodemon backend/server"
+    "start": "SET node node backend/server.js",
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/server",
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/server",
+    "frontend": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -27,5 +29,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "proxy": "http://127.0.0.1:3000"
 }

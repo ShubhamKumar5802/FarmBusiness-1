@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const validator = require("validator");
+const Crop = require("./crop");
 
 const farmerSchema = new mongoose.Schema({
   firstName: {
@@ -54,6 +55,16 @@ const farmerSchema = new mongoose.Schema({
   crops: [
     {
       type: String,
+      // enum: {
+      //   values: [
+      //    "Wheat",
+      //    "Rice",
+      //    "Oats",
+      //    "Barley",
+      //    "Pulse"
+      //   ],
+      //   message: "Error in crop type",
+      // },
     },
   ],
 });
