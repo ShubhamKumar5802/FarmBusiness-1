@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "SET node node backend/server.js",
-    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/server",
-    "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/server",
+    "start": "node server.js",
+    "dev": "NODE_ENV=DEVELOPMENT& nodemon server",
+    "prod": "NODE_ENV=PRODUCTION& nodemon backend/server",
     "frontend": "nodemon app.js"
   },
   "keywords": [],
