@@ -56,17 +56,22 @@ app.post("/logincompany", async (req, res) => {
       companyDetails,
       config
     );
-    currComp = data.user;
-    res.render("companyDashboard", {
-      firstName: data.user.firstName,
-      lastName: data.user.lastName,
-      companyName: data.user.companyName,
-      email: data.user.email,
-      gst: data.user.gst,
-      orders: data.user.orders,
-      hasQuery: false,
-      message: "",
-    });
+    if(data){
+
+      currComp = data.user;
+      res.render("companyDashboard", {
+        firstName: data.user.firstName,
+        lastName: data.user.lastName,
+        companyName: data.user.companyName,
+        email: data.user.email,
+        gst: data.user.gst,
+        orders: data.user.orders,
+        hasQuery: false,
+        message: "",
+      });
+    }else{
+      console.log("Something went wrong")
+    }
   } catch (error) {
     console.log(error.response.data.errMessage);
   }
@@ -88,16 +93,21 @@ app.post("/loginfarmer", async (req, res) => {
       farmerdetails,
       config
     );
-    res.render("farmerDashboard", {
-      firstName: data.user.firstName,
-      lastName: data.user.lastName,
-      email: data.user.email,
-      contactNo: data.user.contactNo,
-      aadhar: data.user.aadhar,
-      land: data.user.land,
-      crops: data.user.crops,
-      orders: data.user.orders,
-    });
+    if(data){
+
+      res.render("farmerDashboard", {
+        firstName: data.user.firstName,
+        lastName: data.user.lastName,
+        email: data.user.email,
+        contactNo: data.user.contactNo,
+        aadhar: data.user.aadhar,
+        land: data.user.land,
+        crops: data.user.crops,
+        orders: data.user.orders,
+      });
+    }else{
+      console.log("something went wrong");
+    }
   } catch (error) {
     console.log(error.response.data.errMessage);
   }
