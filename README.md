@@ -19,23 +19,28 @@ The repository is for <strong>Hackmol 3.0</strong> dated from 26-27
   
 <!--   ###Illustration of of our project -->
 Tech Stack used is 
-- Javascript
-- Python
-- BrainF****
+- HTML
+- CSS
+- JAVASCRIPT
+- NODEJS
+- MONGODB
+- EJS
+- EXPRESS JS
+- BCRYPTJS
+- AXIOS
+- MONGOOSE
+- SASS
+- TAILWIND
+- JSONWEBTOKEN
 
 ---
  Team details
 - Team Code : 
-- Team Name : 
+- Team Name : the_optimizers
 - IsFresher: False
 
 ---
-### Description of Idea
 
-- IDea : 
-- Problem : 
-
-description
 
 ---
 ### Images
