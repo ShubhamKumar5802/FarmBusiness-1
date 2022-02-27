@@ -204,6 +204,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding-bottom:8rem  ;
+  padding-top:8rem  ;
 }
 
 .formgroup::-moz-selection {
@@ -285,7 +287,7 @@
   left: 0;
   z-index: 0;
   border-radius: 5px;
-  background: -webkit-linear-gradient(left, #45b24b, #42fa42);
+  background: -webkit-linear-gradient(left, #7a3710, #a24d11);
   -webkit-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -525,12 +527,10 @@ input[type="radio"] {
 }
 
 #danger {
-  background: #e67518;
-  background: radial-gradient(circle, #e67518 0%, #dc2d0f 49%, #ff0039 100%);
-  color: black;
-  text-align: left;
-  padding-left: 10px;
-  font-size: 0.75rem;
+  color: red;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 1rem;
 }
 
 /* DASHBOARD */

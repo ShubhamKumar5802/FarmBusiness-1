@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <title>SignUp</title>
     <link rel="stylesheet" href="css/style.css" />
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="javascript/signup.js" defer></script>
     <script src="javascript/validation.js" defer></script>
   </head>
-  
+
   <body>
     <%- include('header'); -%>
 
@@ -36,11 +36,7 @@
           </div>
 
           <div class="form-inner">
-            <form
-              action="/registerfarmer"
-              method="POST"
-              class="login login1"
-            >
+            <form action="/registerfarmer" method="POST" class="login login1">
               <div class="field">
                 <input
                   type="text"
@@ -156,23 +152,53 @@
                 <p>Select the crops which you grow</p>
                 <div class="four">
                   <div>
-                    <input type="checkbox" class="checkbox" name="crop1" value="Rice" id="Rice"/>
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      name="crop1"
+                      value="Rice"
+                      id="Rice"
+                    />
                     <label for="Rice">Rice</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="checkbox" name="crop2" value="Wheat" id="Wheat" />
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      name="crop2"
+                      value="Wheat"
+                      id="Wheat"
+                    />
                     <label for="Wheat">Wheat</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="checkbox" name="crop3" value="Barley" id="Barley" />
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      name="crop3"
+                      value="Barley"
+                      id="Barley"
+                    />
                     <label for="Barley">Barley</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="checkbox" name="crop4" value="Oats" id="Oats" />
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      name="crop4"
+                      value="Oats"
+                      id="Oats"
+                    />
                     <label for="Oats">Oats</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="checkbox" name="crop4" value="Oats" id="pulse" />
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      name="crop4"
+                      value="Oats"
+                      id="pulse"
+                    />
                     <label for="pulse">Pulse</label>
                   </div>
                 </div>
@@ -198,11 +224,11 @@
               </div>
             </form>
 
-            <form action="#" class="signup login2">
+            <form action="/registercompany" method="POST" class="signup login2">
               <div class="field">
                 <input
                   type="text"
-                  name="ManagerFirstName"
+                  name="cfirstName"
                   label="First_Name"
                   placeholder="First Name"
                   required
@@ -215,7 +241,7 @@
 
               <div class="field">
                 <input
-                  name="ManagerLastName"
+                  name="clastName"
                   id="Manager_LastName"
                   type="text"
                   label="Last Name"
@@ -230,7 +256,7 @@
               <div class="field">
                 <input
                   type="text"
-                  name="CompanyName"
+                  name="companyName"
                   id="CompanyName"
                   label="Company Name"
                   placeholder="Company Name"
@@ -241,7 +267,7 @@
 
               <div class="field">
                 <input
-                  name="Company_Contact_Number"
+                  name="ccontactNo"
                   id="Company_Contact_Number"
                   label="Company_Contact_Number"
                   type="tel"
@@ -253,7 +279,7 @@
 
               <div class="field">
                 <input
-                  name="Company_EmailId"
+                  name="cemail"
                   id="Company_EmailId"
                   label="Company_EmailId"
                   type="email"
@@ -263,15 +289,20 @@
               </div>
 
               <div class="field">
-                <input name="GST"
-                id="GST"
-                label="GST" type="text" placeholder="Gst Number" required />
+                <input
+                  name="cgst"
+                  id="GST"
+                  label="GST"
+                  type="text"
+                  placeholder="Gst Number"
+                  required
+                />
                 <p class="hide" id="danger">Not a valid GST</p>
               </div>
 
               <div class="field">
                 <input
-                  name="CompanyPassword"
+                  name="cpassword"
                   id="CompanyPassword"
                   type="password"
                   label="Password"
@@ -286,19 +317,17 @@
 
               <div class="field">
                 <input
-                name="Company_Confirm_Password"
-                id="Company_Confirm_Password"
+                  name="Company_Confirm_Password"
+                  id="Company_Confirm_Password"
                   type="password"
                   placeholder="Confirm Password"
                   required
                 />
-                <p class="hide" id="danger">
-                 Password doesnot match
-                </p>
+                <p class="hide" id="danger">Password doesnot match</p>
               </div>
 
               <div class="Ack">
-                <input type="checkbox" name="Ack" class="Ack" required/>
+                <input type="checkbox" name="Ack" class="Ack" required />
                 <label for="Ack"
                   >I agree to the<a href="TANDC.html" target="blank">
                     terms and condition</a
@@ -308,7 +337,7 @@
 
               <div class="field btn">
                 <div class="btn-layer"></div>
-                <input type="submit"  id="CompanySignUp"/>
+                <input type="submit" id="" />
               </div>
             </form>
           </div>

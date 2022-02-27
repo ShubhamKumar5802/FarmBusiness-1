@@ -5,11 +5,13 @@ const sendToken = require("../utils/jwtToken");
 
 // Resister company          => /api/v1/company/register
 exports.registerCompany = catchAsyncError(async (req, res, next) => {
-  const { firstName, lastName, contactNo, email, gst, password } = req.body;
+  const { firstName, lastName, contactNo,companyName, email, gst, password } = req.body;
+  console.log("hi")
   const user = await Company.create({
     firstName,
     lastName,
     contactNo,
+    companyName,
     email,
     gst,
     password,

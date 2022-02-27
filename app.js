@@ -9,6 +9,7 @@ const { default: axios } = require("axios");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+app.set('views', path.join(__dirname,'/views/')); // suggested
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
@@ -21,6 +22,31 @@ app.get("/home", function (req, res) {
 
 app.get("/login", function (req, res) {
   res.render("login");
+});
+app.post("/logincompany", async (req, res) => {
+  const companyDetails = {
+    email: req.body.cemail,
+    contactNo: req.body.ccontactNo,
+    password: req.body.cpassword
+  };
+  const config = {
+    headers: {
+      "content-type": "application/json",
+    },
+  };
+  try {
+    const { data } = await axios.post(
+      "http://127.0.0.1:3000/api/v1/company/login",
+      companyDetails,
+      config
+    );
+    console.log(data);
+  } catch (error) {
+    console.log("err");
+  }
+  // console.log(data);
+  res.redirect("/");
+
 });
 app.post("/loginfarmer", async (req, res) => {
   const farmerdetails = {
@@ -39,7 +65,6 @@ app.post("/loginfarmer", async (req, res) => {
       farmerdetails,
       config
     );
-    console.log(data);
     res.render("farmerdash", {
       firstName: data.user.firstName,
       lastName: data.user.lastName,
@@ -49,13 +74,42 @@ app.post("/loginfarmer", async (req, res) => {
       land: data.user.land,
     });
   } catch (error) {
-    console.log("err");
+    console.log(error.response.data.errMessage);
   }
 });
 
 app.get("/signup", function (req, res) {
   res.render("signup");
 });
+app.post("/registercompany", async (req, res)=> {
+  const config = {
+    headers: {
+      "content-type": "application/json",
+    },
+  };
+  let companyDetails = {
+    firstName: req.body.cfirstName,
+    lastName: req.body.clastName,
+    companyName: req.body.companyName,
+    contactNo: req.body.ccontactNo,
+    email: req.body.cemail,
+    gst: req.body.cgst,
+    password: req.body.cpassword
+  };
+  try {
+    const { data } = await axios.post(
+      "http://127.0.0.1:3000/api/v1/company/register",
+      companyDetails,
+      config
+    );
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+  console.log(companyDetails);
+  res.redirect("/");
+});
+
 app.post("/registerfarmer", async (req, res) => {
   let crop = [];
   if (req.body.crop1 === "Rice") {
@@ -116,7 +170,7 @@ app.get("/tandc", function (req, res) {
   res.render("TANDC");
 });
 app.get("/companydash", function (req, res) {
-  res.render("companydash");
+  res.render("companydashboard");
 });
 
 app.listen(4000 || process.env.PORT, function () {

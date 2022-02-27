@@ -16,6 +16,10 @@ const CompanySchema = new mongoose.Schema({
     min: 3,
     max: 4,
   },
+  companyName: {
+    type: String,
+    required: [true,"required field"],
+  },
   contactNo: {
     type: String,
     required: [true,"required field"],
